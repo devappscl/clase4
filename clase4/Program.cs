@@ -37,7 +37,13 @@ namespace clase4
             {
                 Console.Clear();
                 rw();
-            }else if(opcion == "3"){
+            }
+            else if (opcion == "2")
+            {
+                Console.Clear();
+                rw();
+            }
+            else if(opcion == "3"){
                 Console.Clear();
                 apn();
             }
@@ -106,22 +112,23 @@ namespace clase4
 
                 var alturat = "";
                 var pesot = "";
-                decimal altura = 0;
-                decimal peso = 0;
+                double altura = 0;
+                double peso = 0;
                 string nombre = "";
 
 
+               
 
-                Console.WriteLine("Ingrese su Altura: ");
+                Console.WriteLine("Ingrese su Altura (Metros): ");
                 alturat = Console.ReadLine();
-                bool successaltura = decimal.TryParse(alturat, out altura);
+                bool successaltura = double.TryParse(alturat, out altura);
 
 
                 if (successaltura)
                 {
-                    Console.WriteLine("Ingrese su Peso: ");
+                    Console.WriteLine("Ingrese su Peso (Kilógramos): ");
                     pesot = Console.ReadLine();
-                    bool successpeso = decimal.TryParse(pesot, out peso);
+                    bool successpeso = double.TryParse(pesot, out peso);
 
 
                     if (successpeso)
@@ -153,7 +160,8 @@ namespace clase4
                 Console.WriteLine("");
                 Console.WriteLine("");
                 Console.WriteLine("Estimado(a), " + nombre + ", su altura es: " + altura + " y su peso: " + peso);
-
+          
+                Console.WriteLine("IMC: " + peso / altura );
                 final();
 
                 Console.Clear();
